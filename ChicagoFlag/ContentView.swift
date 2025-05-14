@@ -4,7 +4,7 @@
  In this lab you are to create an image of the Chicago Flag.
  
  You are going to have to make THREE horizontal white rectangles with the middle having a greater height. You will make TWO blue horizontal rectangles. The middle white stripe (hint: not a rectangle) will contain FOUR red stars ON TOP of it.
- 
+ //4 V stacks, creating a stack creates a white padded rectangle
  
  See this image for reference by holding the CMD key down and clicking on the link.
  https://docs.google.com/document/d/1ddjOG_azkHnP_Q4PF7UNkFp-XLgHNKjrsDgHXRcfEIQ/edit?usp=sharing
@@ -45,8 +45,26 @@ struct ContentView: View {
             Rectangle()
                 .foregroundColor(.orange)
                 .frame(width: 50, height: 50)
-            Image("chicagoStar")
-                .foregroundColor(.gray)
+            Rectangle()
+                .frame(width: 50.0, height: 50.0)
+            ZStack {
+                Rectangle()
+                    .frame(width: 50.0, height: 50.0)
+                
+                HStack {
+                    Image("chicagoStar")
+                        .resizable()
+                        .frame(width: 20, height: 15)
+                        .foregroundColor(.gray)
+                        .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
+                }
+                
+            }
+            HStack {
+                Rectangle()
+                    .frame(width: 50.0, height: 50.0)
+            }
+            
         }
     }
 }
