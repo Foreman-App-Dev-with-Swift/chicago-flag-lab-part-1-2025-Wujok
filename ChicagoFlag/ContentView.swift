@@ -41,30 +41,54 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
+        ZStack {
             Rectangle()
-                .foregroundColor(.orange)
-                .frame(width: 50, height: 50)
-            Rectangle()
-                .frame(width: 50.0, height: 50.0)
-            ZStack {
+            VStack {
                 Rectangle()
-                    .frame(width: 50.0, height: 50.0)
-                
-                HStack {
-                    Image("chicagoStar")
-                        .resizable()
-                        .frame(width: 20, height: 15)
-                        .foregroundColor(.gray)
-                        .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
+                    .padding(.bottom, -20.0)
+                    .foregroundColor(Color.white)
+                        .frame(width: 300, height: 30)
+                Rectangle()
+                    .padding(.bottom, -20.0)
+                    .frame(width: 300.0, height: 30.0)
+                    .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
+                ZStack {
+                    Rectangle()
+                        .padding(.bottom, -80.0)
+                        .frame(width: 300.0, height: 70.0)
+                        .foregroundColor(/*@START_MENU_TOKEN@*/.white/*@END_MENU_TOKEN@*/)
+                    HStack {
+                        Image("chicagoStar")
+                            .resizable(capInsets: EdgeInsets())
+                            .frame(width: 30, height: 30)
+                            .foregroundColor(.red)
+                            .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
+                        Image("chicagoStar")
+                            .resizable()
+                            .frame(width: 30, height: 30)
+                            .foregroundColor(.red)
+                            .foregroundColor(.blue)
+                        Image("chicagoStar")
+                            .resizable()
+                            .frame(width: 30, height: 30)
+                            .foregroundColor(.red)
+                            .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
+                        Image("chicagoStar")
+                            .resizable()
+                            .frame(width: 30, height: 30)
+                            .foregroundColor(.red)
+                            .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
+                    }
                 }
-                
-            }
-            HStack {
                 Rectangle()
-                    .frame(width: 50.0, height: 50.0)
+                    .padding(.bottom, -20.0)
+                        .frame(width: 300.0, height: 30.0)
+                        .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
+                Rectangle()
+                    .padding(.bottom, -20.0)
+                        .frame(width: 300.0, height: 30.0)
+                        .foregroundColor(/*@START_MENU_TOKEN@*/Color.white/*@END_MENU_TOKEN@*/)
             }
-            
         }
     }
 }
