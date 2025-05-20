@@ -4,7 +4,7 @@
  In this lab you are to create an image of the Chicago Flag.
  
  You are going to have to make THREE horizontal white rectangles with the middle having a greater height. You will make TWO blue horizontal rectangles. The middle white stripe (hint: not a rectangle) will contain FOUR red stars ON TOP of it.
- 
+ //4 V stacks, creating a stack creates a white padded rectangle
  
  See this image for reference by holding the CMD key down and clicking on the link.
  https://docs.google.com/document/d/1ddjOG_azkHnP_Q4PF7UNkFp-XLgHNKjrsDgHXRcfEIQ/edit?usp=sharing
@@ -41,12 +41,54 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
+        ZStack {
             Rectangle()
-                .foregroundColor(.orange)
-                .frame(width: 50, height: 50)
-            Image("chicagoStar")
-                .foregroundColor(.gray)
+            VStack {
+                Rectangle()
+                    .padding(.bottom, -20.0)
+                    .foregroundColor(Color.white)
+                        .frame(width: 300, height: 30)
+                Rectangle()
+                    .padding(.bottom, -20.0)
+                    .frame(width: 300.0, height: 30.0)
+                    .foregroundColor(/*@START_MENU_TOKEN@*/Color(hue: 0.505, saturation: 0.354, brightness: 0.939)/*@END_MENU_TOKEN@*/)
+                ZStack {
+                    Rectangle()
+                        .padding(.bottom, -80.0)
+                        .frame(width: 300.0, height: 70.0)
+                        .foregroundColor(/*@START_MENU_TOKEN@*/.white/*@END_MENU_TOKEN@*/)
+                    HStack {
+                        Image("chicagoStar")
+                            .resizable(capInsets: EdgeInsets())
+                            .frame(width: 30, height: 30)
+                            .foregroundColor(.red)
+                            .foregroundColor(/*@START_MENU_TOKEN@*/Color(hue: 0.561, saturation: 0.442, brightness: 1.0)/*@END_MENU_TOKEN@*/)
+                        Image("chicagoStar")
+                            .resizable()
+                            .frame(width: 30, height: 30)
+                            .foregroundColor(.red)
+                            .foregroundColor(.blue)
+                        Image("chicagoStar")
+                            .resizable()
+                            .frame(width: 30, height: 30)
+                            .foregroundColor(.red)
+                            .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
+                        Image("chicagoStar")
+                            .resizable()
+                            .frame(width: 30, height: 30)
+                            .foregroundColor(.red)
+                            .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
+                    }
+                }
+                Rectangle()
+                    .padding(.bottom, -20.0)
+                        .frame(width: 300.0, height: 30.0)
+                        .foregroundColor(/*@START_MENU_TOKEN@*/Color(hue: 0.505, saturation: 0.354, brightness: 0.939)/*@END_MENU_TOKEN@*/)
+                Rectangle()
+                    .padding(.bottom, -20.0)
+                        .frame(width: 300.0, height: 30.0)
+                        .foregroundColor(/*@START_MENU_TOKEN@*/Color.white/*@END_MENU_TOKEN@*/)
+            }
         }
     }
 }
